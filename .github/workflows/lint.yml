@@ -12,7 +12,9 @@ jobs:
       - name: Check
         uses: tsuyoshicho/action-textlint@v3
         with:
-          textlint_flags: "**/*.md"
+          github_token: ${{ secrets.github_token }}
+          textlint_flags: "articles/**"
+          reporter: github-pr-review
           level: warning
 
   markdown:
