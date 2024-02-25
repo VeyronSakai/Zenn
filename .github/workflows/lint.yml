@@ -1,6 +1,9 @@
 name: Lint
 on: pull_request
 
+permissions:
+  pull-requests: write
+
 jobs:
   text:
     runs-on: ubuntu-latest
