@@ -3,6 +3,7 @@ on: pull_request
 
 permissions:
   pull-requests: write
+  contents: read
 
 jobs:
   text:
@@ -15,8 +16,8 @@ jobs:
       - name: Check
         uses: tsuyoshicho/action-textlint@v3
         with:
-          github_token: ${{ secrets.github_token }}
-          textlint_flags: "articles/**"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          textlint_flags: "articles/"
           reporter: github-pr-review
           level: warning
 
