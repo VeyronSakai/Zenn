@@ -1,5 +1,7 @@
 {
     "rules": {
-        "no-todo": true
+        "no-todo": true,
+        "preset-ja-technical-writing": true,
+        "preset-ja-spacing": true
     }
 }
