@@ -17,12 +17,12 @@ book: node_moduels books ## Create new book
 preview: node_moduels ## Preview
 	npx zenn preview
 
-node_moduels: package.json package-lock.json
-	npm install
-
 .PHONY: clean
 clean: ## Remove node_modules
 	rm -rf node_modules
+
+node_moduels: package.json package-lock.json
+	npm install
 
 package.json:
 	npm init -yes
