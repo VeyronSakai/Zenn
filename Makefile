@@ -13,12 +13,16 @@ article: node_moduels articles ## Create new article
 book: node_moduels books ## Create new book
 	npx zenn new:book
 
-node_moduels: package.json package-lock.json
-	npm install
+.PHONY: preview
+preview: node_moduels ## Preview
+	npx zenn preview
 
 .PHONY: clean
 clean: ## Remove node_modules
 	rm -rf node_modules
+
+node_moduels: package.json package-lock.json
+	npm install
 
 package.json:
 	npm init -yes
@@ -29,7 +33,3 @@ articles: node_moduels
 
 books: node_moduels
 	npx zenn init
-
-.PHONY: preview
-preview: node_moduels ## Preview
-	npx zenn preview
