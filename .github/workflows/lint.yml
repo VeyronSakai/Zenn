@@ -1,15 +1,21 @@
 name: Lint
+
 on: pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   pull-requests: write
   contents: read
 
 jobs:
-  detect-action-changes:
+  paths:
     runs-on: ubuntu-latest
     outputs:
       action: ${{ steps.filter.outputs.action }}
+      markdown: ${{ steps.filter.outputs.markdown }}
     steps:
       - uses: dorny/paths-filter@v3
         id: filter
@@ -17,22 +23,12 @@ jobs:
           filters: |
             action:
               - ".github/**"
-
-  detect-md-changes:
-    runs-on: ubuntu-latest
-    outputs:
-      markdown: ${{ steps.filter.outputs.markdown }}
-    steps:
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
             markdown:
               - "**/*.md"
 
   text:
-    needs: detect-md-changes
-    if: ${{ needs.detect-md-changes.outputs.markdown == 'true' }}
+    needs: paths
+    if: ${{ needs.paths.outputs.markdown == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -49,8 +45,8 @@ jobs:
           fail_on_error: true
 
   markdown:
-    needs: detect-md-changes
-    if: ${{ needs.detect-md-changes.outputs.markdown == 'true' }}
+    needs: paths
+    if: ${{ needs.paths.outputs.markdown == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -62,8 +58,8 @@ jobs:
           fail_on_error: true
 
   action:
-    needs: detect-action-changes
-    if: ${{ needs.detect-action-changes.outputs.action == 'true' }}
+    needs: paths
+    if: ${{ needs.paths.outputs.action == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
