@@ -39,7 +39,7 @@ articles: node_modules
 		npx zenn init; \
 	fi
 
-books: node_moduels
+books: node_modules
 	@if [ ! -d "books" ]; then \
 		npx zenn init; \
 	fi

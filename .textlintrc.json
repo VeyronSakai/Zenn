@@ -17,6 +17,9 @@
             "sentence-length": {
                 "max": 150
             }
+        },
+        "ja-technical-writing": {
+            "ja-no-mixed-period": false
         }
     }
 }
