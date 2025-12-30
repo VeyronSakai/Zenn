@@ -140,7 +140,7 @@ handoffs:
 - [ ] 重大な問題（技術的誤り、論理破綻）がすべて解消されている
 - [ ] 改善提案が具体的で実行可能
 - [ ] `review.md` が作成されている
-- [ ] `review.md` に対して textlint と markdownlint を実行してもエラーがないこと
+- [ ] 作成された `review.md` に対して textlint と markdownlint を実行してもエラーがないこと
 
 ## 参考ドキュメント
 
