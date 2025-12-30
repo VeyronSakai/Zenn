@@ -24,10 +24,10 @@ Zenn 向け技術記事を作成するためのエージェントワークフロ
 
 | エージェント | 役割 | 成果物 |
 | ------------ | ------ | -------- |
-| `zenn.planner` 📋 | 構成設計 | `drafts/<slug>/outline.md` |
+| `zenn.planner` 📋 | 構成設計 | `articles/<slug>.md` (zenn-cli), `drafts/<slug>/outline.md` |
 | `zenn.writer` ✍️ | 本文執筆 | `drafts/<slug>/draft.md` |
 | `zenn.reviewer` 🔍 | 品質レビュー | `drafts/<slug>/review.md` |
-| `zenn.optimizer` 🏷️ | SEO/メタデータ | `articles/<slug>.md` |
+| `zenn.optimizer` 🏷️ | SEO/メタデータ | `articles/<slug>.md` (更新) |
 | `zenn.publisher` 🚀 | Draft PR 作成 | GitHub Draft PR |
 
 ## ディレクトリ構造

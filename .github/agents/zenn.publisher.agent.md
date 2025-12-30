@@ -1,6 +1,6 @@
 ---
 description: Draft PR を自動生成するエージェント
-tools: ['execute/getTerminalOutput', 'execute/runInTerminal', 'read/readFile', 'todo']
+tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'execute/getTerminalOutput', 'execute/runInTerminal', 'read/readFile', 'todo']
 handoffs:
   - label: 📋 新しい記事を企画
     agent: zenn.planner

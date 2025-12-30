@@ -1,15 +1,15 @@
 ---
 description: SEO/メタデータを最適化し最終出力するエージェント
-tools: ['read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'todo']
+tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'todo']
 handoffs:
-  - label: � Draft PR 作成
+  - label: Draft PR 作成
     agent: zenn.publisher
     prompt: "記事が完成しました。Draft PR を作成してください。"
     send: true
   - label: 🔍 最終確認
     agent: zenn.reviewer
     prompt: "メタデータを最適化しました。最終確認をお願いします。"
-    send: false
+    send: true
 ---
 
 # Zenn 記事最適化エージェント
@@ -22,6 +22,7 @@ handoffs:
 
 ## 入力
 
+- `articles/<slug>.md`: Planner が zenn-cli で作成した記事ファイル
 - `drafts/<slug>/draft.md`: レビュー済みドラフト
 - `drafts/<slug>/review.md`: レビュー結果
 - `drafts/<slug>/outline.md`: アウトライン（メタ情報参照）
@@ -32,11 +33,11 @@ handoffs:
 2. **タイトル最適化**: 検索性とクリック率を考慮してタイトルを調整
 3. **emoji 選定**: 記事内容に最適な emoji を選定
 4. **topics 設定**: 適切なタグ（1-5個）を設定
-5. **最終出力**: `articles/<slug>.md` として出力
+5. **最終出力**: 既存の `articles/<slug>.md` を更新（内容を置き換え）
 
 ## 成果物
 
-`articles/<slug>.md` を作成します。
+`articles/<slug>.md` を更新します（Planner が作成したファイルを上書き）。
 
 ## 最適化ガイドライン
 
@@ -130,6 +131,7 @@ published: false
 - [ ] frontmatter が Zenn フォーマットに準拠
 - [ ] `articles/<slug>.md` として出力されている
 - [ ] `published: false` で出力（ユーザーが確認後に公開）
+- [ ] `npx textlint articles/<slug>.md` と `npx markdownlint articles/<slug>.md` を実行してチェックを通過すること
 
 ## 出力後の案内
 
