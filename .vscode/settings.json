@@ -1,0 +1,9 @@
+{
+  "chat.promptFilesRecommendations": {
+    "zenn.planner": true,
+    "zenn.writer": true,
+    "zenn.reviewer": true,
+    "zenn.optimizer": true,
+    "zenn.publisher": true
+  }
+}
