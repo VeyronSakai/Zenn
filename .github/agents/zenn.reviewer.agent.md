@@ -1,6 +1,6 @@
 ---
 description: 記事の品質をレビューし改善するエージェント
-tools: ['read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
+tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
 handoffs:
   - label: 🏷️ メタデータ最適化
     agent: zenn.optimizer
@@ -140,6 +140,7 @@ handoffs:
 - [ ] 重大な問題（技術的誤り、論理破綻）がすべて解消されている
 - [ ] 改善提案が具体的で実行可能
 - [ ] `review.md` が作成されている
+- [ ] `review.md` に対して textlint と markdownlint を実行してもエラーがないこと
 
 ## 参考ドキュメント
 

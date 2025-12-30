@@ -1,6 +1,6 @@
 ---
 description: アウトラインに基づいて記事本文を執筆するエージェント
-tools: ['read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
+tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
 handoffs:
   - label: 🔍 レビュー依頼
     agent: zenn.reviewer
@@ -111,7 +111,7 @@ published: false
 - [ ] Zenn の Markdown 記法に準拠している
 - [ ] 導入で記事の目的が明確に伝わる
 - [ ] まとめで要点が整理されている
-- [ ] textlint と markdownlint でエラーが出ない
+- [ ] `drafts/<slug>/draft.md` に対して textlint と markdownlint を実行してもエラーがないこと
 
 ## 参考ドキュメント
 

@@ -1,6 +1,6 @@
 ---
 description: 記事の構成・アウトラインを設計するエージェント
-tools: ['read/readFile', 'edit/createDirectory', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
+tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'read/readFile', 'edit/createDirectory', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
 handoffs:
   - label: ✍️ 執筆開始
     agent: zenn.writer
@@ -28,14 +28,40 @@ handoffs:
 
 ## 処理手順
 
-1. **情報収集**: 参考 URL やドキュメントを `web/fetch` や `read/readFile` で取得・分析
-2. **目的の明確化**: 記事の目的とターゲット読者を定義
-3. **構成設計**: 見出し構成（H2/H3）を論理的な流れで設計
-4. **詳細化**: 各セクションで書くべき内容を具体的にメモ
+### 1. 記事ファイルの作成
+
+まず zenn-cli を使って記事ファイルを作成します。
+
+```bash
+npx zenn new:article
+```
+
+このコマンドは `articles/<slug>.md` を作成します。出力から slug（ファイル名から `.md` を除いたもの）を取得してください。
+
+### 2. 情報収集
+
+参考 URL やドキュメントを `web/fetch` や `read/readFile` で取得・分析します。
+
+### 3. 目的の明確化
+
+記事の目的とターゲット読者を定義します。
+
+### 4. 構成設計
+
+見出し構成（H2/H3）を論理的な流れで設計します。
+
+### 5. 詳細化
+
+各セクションで書くべき内容を具体的にメモします。
+
+### 6. drafts フォルダの作成
+
+取得した slug を使って `drafts/<slug>/` フォルダを作成し、`outline.md` を保存します。
 
 ## 成果物
 
-`drafts/<slug>/outline.md` を作成します。slug はテーマから適切に生成してください（英数字とハイフン）。
+- `articles/<slug>.md`: zenn-cli が生成した記事ファイル（テンプレート状態）
+- `drafts/<slug>/outline.md`: アウトライン
 
 ### outline.md のフォーマット
 
@@ -84,7 +110,7 @@ handoffs:
 - [ ] 各セクションで書くべき内容が具体的にメモされている
 - [ ] 技術記事として適切なスコープ（広すぎず狭すぎず）
 - [ ] 参考資料が整理されている
-- [ ] textlint と markdownlint でエラーが出ない
+- [ ] `drafts/<slug>/outline.md` に対して textlint と markdownlint を実行してもエラーがないこと
 
 ## 参考ドキュメント
 
