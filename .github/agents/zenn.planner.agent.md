@@ -1,7 +1,7 @@
 ---
 description: 記事の構成・アウトラインを設計するエージェント
 target: vscode
-tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'read/readFile', 'edit/createDirectory', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
+tools: ['execute/getTerminalOutput', 'execute/runInTerminal', 'read/readFile', 'edit/createDirectory', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'ms-vscode.vscode-websearchforcopilot/websearch', 'todo']
 handoffs:
   - label: ✍️ 執筆開始
     agent: zenn.writer
