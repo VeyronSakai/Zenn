@@ -1,5 +1,6 @@
 ---
 description: 記事の品質をレビューし改善するエージェント
+target: vscode
 tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
 handoffs:
   - label: 🏷️ メタデータ最適化

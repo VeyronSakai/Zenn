@@ -1,5 +1,6 @@
 ---
 description: SEO/メタデータを最適化し最終出力するエージェント
+target: vscode
 tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'todo']
 handoffs:
   - label: Draft PR 作成

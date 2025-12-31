@@ -1,5 +1,6 @@
 ---
 description: アウトラインに基づいて記事本文を執筆するエージェント
+target: vscode
 tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
 handoffs:
   - label: 🔍 レビュー依頼
