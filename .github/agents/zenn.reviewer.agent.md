@@ -1,7 +1,7 @@
 ---
 description: 記事の品質をレビューし改善するエージェント
 target: vscode
-tools: ['execute/runInTerminal', 'execute/getTerminalOutput', 'read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'todo']
+tools: ['execute/getTerminalOutput', 'execute/runInTerminal', 'read/readFile', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'ms-vscode.vscode-websearchforcopilot/websearch', 'todo']
 handoffs:
   - label: 🏷️ メタデータ最適化
     agent: zenn.optimizer
