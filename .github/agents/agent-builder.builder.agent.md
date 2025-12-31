@@ -1,5 +1,6 @@
 ---
 description: GitHub Copilot のエージェント作成を支援するエージェントです。
+target: vscode
 tools: ['execute/getTerminalOutput', 'execute/runInTerminal', 'read/readFile', 'edit/createDirectory', 'edit/createFile', 'edit/editFiles', 'search', 'web/fetch', 'ms-vscode.vscode-websearchforcopilot/websearch', 'todo']
 ---
 
